@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fase 4 — JS Funciones (ejercicios separados)</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Fase 4 — JS Funciones</h1>
+        <p class="lead">Cada ejercicio está separado en su propia tarjeta con entradas, botón y salida.</p>
+    </header>
+
+    <main class="grid">
+
+        <!-- 4a. Suma de una matriz de enteros -->
+        <section class="card" id="ej-4a">
+            <h2>4a) Suma de una matriz de enteros</h2>
+            <div class="row">
+                <label for="arr4a">Arreglo (números separados por coma):</label>
+                <input id="arr4a" type="text" placeholder="1, 2, 3, 4, 5, 6" value="1,2,3,4,5,6" />
+            </div>
+            <div class="row">
+                <button onclick="handleSum()">Calcular suma</button>
+                <span class="pill code">Resultado esperado: 21</span>
+            </div>
+            <div id="out4a" class="out"></div>
+        </section>
+
+        <!-- 4b. Nombre del mes y días del mes dado mes/año -->
+        <section class="card" id="ej-4b">
+            <h2>4b) Nombre del mes y nº de días (mes/año)</h2>
+            <div class="row">
+                <div style="flex:1 1 120px">
+                    <label for="mes4b">Mes (1–12)</label>
+                    <input id="mes4b" type="number" min="1" max="12" placeholder="1" value="2" />
+                </div>
+                <div style="flex:1 1 160px">
+                    <label for="anio4b">Año (yyyy)</label>
+                    <input id="anio4b" type="number" placeholder="2025" value="2024" />
+                </div>
+            </div>
+            <div class="row">
+                <button onclick="handleMonthInfo()">Obtener datos</button>
+                <span class="tip">Devuelve: nombre del mes y 28–31 días (bisiesto considerado)</span>
+            </div>
+            <div id="out4b" class="out"></div>
+        </section>
+
+        <!-- 6. Valor más alto en una matriz -->
+        <section class="card" id="ej-6">
+            <h2>6) Valor más alto en una matriz</h2>
+            <div class="row">
+                <label for="arr6">Arreglo:</label>
+                <input id="arr6" type="text" placeholder="11, 3, 16, 90" value="11,3,16,90" />
+            </div>
+            <div class="row">
+                <button onclick="handleMaxArray()">Encontrar máximo</button>
+                <span class="pill code">Resultado esperado: 90</span>
+            </div>
+            <div id="out6" class="out"></div>
+        </section>
+
+        <!-- 8a. Diferencia de días entre dos fechas -->
+        <section class="card" id="ej-8a">
+            <h2>8a) Diferencia de días entre dos fechas</h2>
+            <div class="row">
+                <div style="flex:1 1 180px">
+                    <label for="f1">Fecha 1</label>
+                    <input id="f1" type="date" />
+                </div>
+                <div style="flex:1 1 180px">
+                    <label for="f2">Fecha 2</label>
+                    <input id="f2" type="date" />
+                </div>
+            </div>
+            <div class="row">
+                <button onclick="handleDiffDays()">Calcular diferencia (días)</button>
+            </div>
+            <div id="out8a" class="out"></div>
+        </section>
+
+        <!-- 18. Producto de valores en una matriz -->
+        <section class="card" id="ej-18">
+            <h2>18) Producto de valores en una matriz</h2>
+            <div class="row">
+                <label for="arr18">Arreglo:</label>
+                <input id="arr18" type="text" placeholder="2, 3, 4" value="2,3,4" />
+            </div>
+            <div class="row">
+                <button onclick="handleProduct()">Calcular producto</button>
+            </div>
+            <div id="out18" class="out"></div>
+        </section>
+
+        <!-- 31. Número más alto de tres números diferentes -->
+        <section class="card" id="ej-31a">
+            <h2>31) Número más alto de tres números</h2>
+            <div class="row">
+                <div style="flex:1 1 100px"><label for="n1">n1</label><input id="n1" type="number" value="7" /></div>
+                <div style="flex:1 1 100px"><label for="n2">n2</label><input id="n2" type="number" value="12" /></div>
+                <div style="flex:1 1 100px"><label for="n3">n3</label><input id="n3" type="number" value="3" /></div>
+            </div>
+            <div class="row"><button onclick="handleMaxOfThree()">Calcular mayor</button></div>
+            <div id="out31a" class="out"></div>
+        </section>
+
+        <!-- 5. Unir todos los elementos de una matriz en una cadena -->
+        <section class="card" id="ej-5">
+            <h2>5) Unir elementos de una matriz en una cadena</h2>
+            <div class="row">
+                <label for="arr5">Arreglo:</label>
+                <input id="arr5" type="text" placeholder="Rojo, Verde, Blanco, Negro"
+                    value="Rojo, Verde, Blanco, Negro" />
+            </div>
+            <div class="row">
+                <label for="sep5">Separador</label>
+                <input id="sep5" type="text" placeholder="," value="," />
+            </div>
+            <div class="row"><button onclick="handleJoin()">Unir</button></div>
+            <div id="out5" class="out"></div>
+        </section>
+
+        <!-- 8b. Elemento más frecuente de una matriz -->
+        <section class="card" id="ej-8b">
+            <h2>8b) Elemento más frecuente en una matriz</h2>
+            <div class="row">
+                <label for="arr8b">Arreglo:</label>
+                <input id="arr8b" type="text" placeholder="3, a, a, a, 2, 3, a, 3, a, 2, 4, 9, 3"
+                    value="3,a,a,a,2,3,a,3,a,2,4,9,3" />
+            </div>
+            <div class="row"><button onclick="handleMostFrequent()">Encontrar más frecuente</button></div>
+            <div id="out8b" class="out"></div>
+        </section>
+
+        <!-- 31 (bis). Eliminar un elemento específico de una matriz -->
+        <section class="card" id="ej-31b">
+            <h2>31) Eliminar un elemento específico de una matriz</h2>
+            <div class="row">
+                <label for="arr31b">Arreglo:</label>
+                <input id="arr31b" type="text" placeholder="2, 4, 5, 9" value="2,4,5,9" />
+            </div>
+            <div class="row">
+                <label for="val31b">Valor a remover</label>
+                <input id="val31b" type="text" placeholder="5" value="5" />
+            </div>
+            <div class="row"><button onclick="handleRemoveElement()">Remover</button> <span class="pill code">Ej.:
+                    Remueve([2,4,5,9], 5) ⇒ [2,4,9]</span></div>
+            <div id="out31b" class="out"></div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <footer style="margin-top:24px; color:var(--muted); font-size:12px">
+        <p>Ejercicios de funciones en JavaScript separados. Autor: Marco Muñoz Aragon.</p>
+    </footer>
+
+
+</body>
+
+</html>
